@@ -1,3 +1,5 @@
+# scan item and subtotal funcitons
+
 cart = []
 def scan_item():
     add_more = "yes"
@@ -10,6 +12,7 @@ def scan_item():
     return cart
 
 def calculate_subtotal():
+    subtotal = 0
     for item in cart:
         subtotal += item('price')
     return subtotal
@@ -30,3 +33,5 @@ def update_stock(item_name, inventory):
     else:
         return False  # Item not found or out of stock
 
+        subtotal += item['price'] * item['quantity']
+    return subtotal
