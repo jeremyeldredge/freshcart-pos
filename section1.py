@@ -1,3 +1,5 @@
+# scan item and subtotal funcitons
+
 cart = []
 def scan_item():
     add_more = "yes"
@@ -10,6 +12,7 @@ def scan_item():
     return cart
 
 def calculate_subtotal():
+    subtotal = 0
     for item in cart:
-        subtotal += item('price')
+        subtotal += item['price'] * item['quantity']
     return subtotal
