@@ -1,3 +1,5 @@
+# scan item and subtotal funcitons
+
 cart = []
 def scan_item():
     add_more = "yes"
@@ -35,3 +37,5 @@ def print_receipt(quantities, items, subtotal, membership, discount, total):
     print(f"Tax: ${calculate_tax(subtotal - discount):.2f}")
     print(f"Total (incl. tax): ${total:.2f}")
     print("="*30)
+        subtotal += item['price'] * item['quantity']
+    return subtotal
