@@ -37,5 +37,22 @@ def print_receipt(quantities, items, subtotal, membership, discount, total):
     print(f"Tax: ${calculate_tax(subtotal - discount):.2f}")
     print(f"Total (incl. tax): ${total:.2f}")
     print("="*30)
+    
+#member2
+
+def check_stock(item_name, inventory):
+    item = inventory.get(item_name)
+    if item:
+        return item["stock"]
+    else:
+        return -1  # Item not found
+def update_stock(item_name, inventory):
+    item = inventory.get(item_name)
+    if item and item["stock"] > 0:
+        item["stock"] -= 1
+        return True
+    else:
+        return False  # Item not found or out of stock
+
         subtotal += item['price'] * item['quantity']
     return subtotal
